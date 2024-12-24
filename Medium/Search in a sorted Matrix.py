@@ -4,7 +4,7 @@ class Solution:
         m = len(mat[0])
         for i in range(n):
             if(mat[i][-1]<x):
-                i += 1
+                continue
             else:
                 for j in range(m):
                     if(mat[i][j]==x):
