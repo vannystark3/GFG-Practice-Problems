@@ -20,10 +20,27 @@ Expected Time Complexity: O(n)
 Expected Auxiliary Space: O(1)
 
 Constraints:
- - 1 ≤ arr.size(), k ≤ 107
- - 1 ≤ arr[i] ≤ 1018
+1 ≤ arr.size(), k ≤ 10^7
+1 ≤ arr[i] ≤ 10^18
 
 ### Python
 ```py
-
+class Solution:
+    def rev(self,arr,l,r):
+        while(l<r):
+            arr[l],arr[r] = arr[r],arr[l]
+            l += 1
+            r -= 1
+            
+    def reverseInGroups(self, arr, k):
+        n = len(arr)
+        if(n<=1):
+            return
+        if(k>=n):
+            self.rev(arr,0,n-1)
+        else:
+            i = 0
+            while(i<n):
+                self.rev(arr,i,min(i+k-1,n-1))
+                i += k
 ```
